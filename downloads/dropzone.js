@@ -990,6 +990,11 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
               _this._addFilesFromDirectory(entry, "" + path + "/" + entry.name);
             }
           }
+          if (entries.length>0) {
+            dirReader.readEntries(entriesReader, function(error) {
+              return typeof console !== "undefined" && console !== null ? typeof console.log === "function" ? console.log(error) : void 0 : void 0;
+            });
+          }
         };
       })(this);
       return dirReader.readEntries(entriesReader, function(error) {
